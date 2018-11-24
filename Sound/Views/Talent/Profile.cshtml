@@ -1,0 +1,118 @@
+﻿
+@{
+    ViewBag.Title = "Profile";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div>
+    @{
+        Html.RenderPartial("_talentTopNav");
+    }
+</div>
+<div>
+    @{
+        Html.RenderPartial("_talentSidebar");
+    }
+</div>
+
+
+<div class="content-wrapper user">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2 col-lg-10 centered">
+                <div class="well">
+                    <div class="panel panel-info viewbgcolor profilebgcolor">
+                        <div class="panel-heading">
+                            <h3 class="panel-title">Username</h3>
+                        </div>
+                        <div class="panel-body">
+                            <div class="row">
+
+                                <div class="col-md-3 col-lg-3 " align="center">
+                                    <img alt="User Pic" src="~/images/profilepic.png" class="img-circle img-responsive profileImage">
+                                    <div id="fanCount">Fans : <span id="fanCountNumber">0</span></div>
+                                    <div style='padding-top:15px'>
+                                        <div style='font-size:20px;font-weight: 900'>
+                                            View
+                                            <button class='btn btn-success btnonlineband' id="userAudio" style="margin-top: 0 !important">AUDIO</button>
+                                            <button class='btn btn-success btnonlineband' id="userVideo" style="margin-top: 0 !important">VIDEO</button>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class=" col-md-9 col-lg-9 ">
+                                    <table class="table table-user-information">
+                                        <tbody>
+                                            <tr>
+                                                <td>Preferred Language</td>
+                                                <td></td>
+                                            </tr>
+                                            <tr>
+                                                <td>Music Category</td>
+                                                <td></td>
+                                            </tr>
+                                            <tr>
+                                                <td>Genre You Like</td>
+                                                <td></td>
+                                            </tr>
+                                            <tr>
+                                                <td>No. Of Year Trained</td>
+                                                <td></td>
+                                            </tr>
+                                            <tr>
+                                                <td>Name Of Trainer</td>
+                                                <td></td>
+                                            </tr>
+                                            <tr>
+                                                <td>Institute Trained</td>
+                                                <td></td>
+                                            </tr>
+                                            <tr>
+                                                <td>Date Of Birth</td>
+                                                <td></td>
+                                            </tr>
+
+                                            <tr>
+                                                <td>Mobile No</td>
+                                                <td></td>
+                                            </tr>
+                                            <tr>
+                                                <td>City</td>
+                                                <td></td>
+                                            </tr>
+                                            <tr>
+                                                <td>Country</td>
+                                                <td></td>
+                                            </tr>
+                                            <tr>
+                                                <td>Upload Performance Link</td>
+                                                <td></td>
+                                            </tr>
+                                            <tr>
+                                                <td>Award/Contest's Won</td>
+                                                <td></td>
+                                            </tr>
+                                            <tr>
+                                                <td>Additional Remark</td>
+                                                <td></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="panel-footer viewbgcolor profilebgcolor">
+                            <span class="pull-right">
+                                <a href="https://www.musictalentindia.com/users/pofile_edit" data-original-title="Edit this user" data-toggle="tooltip" type="button" class="btn btn-sm btn-warning"><i class="glyphicon glyphicon-edit"></i></a>
+                            </span>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+

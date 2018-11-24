@@ -1,0 +1,193 @@
+﻿
+@{
+    ViewBag.Title = "MusicUpload";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div>
+    @{
+        Html.RenderPartial("_talentTopNav");
+    }
+</div>
+<div>
+    @{
+        Html.RenderPartial("_talentSidebar");
+    }
+</div>
+
+
+<div class="content-wrapper user">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2 col-lg-10 centered">
+                <div class="well">
+                    <div id="upload-singer" class="inner-bg profilepage">
+                        <div class="container">
+                            <div class="row">
+                                <div class="heading-block text-center">
+                                    <h3>Upload Song (For Singer)</h3>
+                                    <span class="divide"></span>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-offset-3 col-sm-6">
+                                    <p id="allRequire">Please fill as many fields as possible to get noticed by Talent finder or viewers.</p>
+                                </div>
+                                <div class="col-sm-12">&nbsp;</div>
+                                <div class="col-sm-offset-3 col-sm-6">
+                                    <div class="form-box">
+                                        <div class="form-bottom">
+
+                                            <form class="registration-form " id="audio_upload_form" method="post" action="https://www.musictalentindia.com/pages/without_paypal/" role="form" enctype="multipart/form-data" onsubmit="return check_audio_upload()">
+
+                                                <div class="form-group">
+                                                    <label for="form-language" class="">LANGUAGE*</label>
+                                                    <select id="u_lang" name="u_lang" style="display: inline !important;" class="select2me required" title="Please select language">
+                                                        <option value="">Preferred Languages</option>
+                                                        <option value="kannada">Kannada</option>
+                                                        <option value="hindi">Hindi</option>
+                                                        <option value="english">English</option>
+                                                        <option value="telugu">Telugu</option>
+                                                        <option value="malayalam">Malayalam</option>
+                                                        <option value="tamil">Tamil</option>
+                                                    </select>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="form-track">SONG TITLE*</label>
+                                                    <input type="text" id="form-track-title" class="form-track-title form-control required" placeholder="" name="form-track-title" />
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="form-music-category">MUSIC CATEGORY*</label>
+                                                    <select id="form-music-category" name="form-music-category" style="display: inline !important;" class="select2me required">
+                                                        <option value="">Music Category</option>
+                                                        <option value="film songs">Film Songs</option>
+                                                        <option value="devotional songs">Devotional Songs</option>
+                                                        <option value="classical songs">Classical Songs</option>
+                                                        <option value="folk songs">Folk Songs</option>
+                                                        <option value="western style">Western Style</option>
+                                                    </select>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="form-language" class="">GENRE*</label>
+                                                    <select id="u_ganre" name="u_ganre" style="display: inline !important;" class="select2me required">
+                                                        <option value="">Genre You Like</option>
+                                                        <option value="classical">Classical</option>
+                                                        <option value="devotional">Devotional</option>
+                                                        <option value="pop">Pop</option>
+                                                        <option value="rap">Rap</option>
+                                                        <option value="romantic">Romantic</option>
+                                                        <option value="sad">Sad</option>
+                                                        <option value="comedy">Comedy</option>
+                                                        <option value="patriotic">Patriotic</option>
+                                                        <option value="joy">Joy</option>
+                                                        <option value="metal ">Metal </option>
+                                                    </select>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="form-movie-title" class="">MOVIE/ALBUM TITLE</label>
+                                                    <input type="text" id="form-movie-title" class="form-movie-title form-control" placeholder="" name="form-movie-title">
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="form-tag" class="active">TAG</label>
+                                                    <select id="form-tag" multiple="multiple" class="select2me-tag form-tag form-control" name="form-tag[]"></select>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="form-description" class="active">DESCRIPTION</label>
+                                                    <textarea id="form-description" class="form-description form-control" placeholder="Write here..." name="form-description"></textarea>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="exampleInputFile">UPLOAD TRACK IMAGE*</label>
+                                                    <input type="file" aria-describedby="fileHelp" id="exampleInputFile" class="form-control-file" accept=".jpg,.png,.jpeg" name="uploadFileTrackImage" size="1">
+                                                    <small style="color: white;" class="form-text text-muted" id="fileHelp">(Upload .JPG,.PNG,.JPEG  format)</small>
+                                                </div>
+                                                <div class="col-sm-12">&nbsp;</div>
+                                                <div class="btn-group" data-toggle="buttons">
+                                                    <label class="btn btn-primary">
+                                                        <input type="radio" name="options" id="upload_radio" autocomplete="off" value="upload"><i class="fa fa-upload " aria-hidden="true" style="font-size: 2.3rem;color: #f34580;"></i> Upload Audio/Video
+                                                    </label>
+                                                    <label class="btn btn-primary" style="margin-left: 95px;">
+                                                        <input type="radio" name="options" id="upload_record" autocomplete="off" value="record"> <i class="fa fa-microphone" aria-hidden="true" style="font-size: 2.3rem;color: #f34580;"></i> Record Audio
+                                                    </label>
+                                                </div>
+                                                <div class="col-sm-12">&nbsp;</div>
+                                                <div class="form-group" id="upload_audio" style="display:none;">
+                                                    <label for="exampleInputFile">UPLOAD AUDIO/VIDEO*</label>
+                                                    <input type="file" aria-describedby="fileHelp" id="exampleInputFile" class="form-control-file" accept=".mp3,.mp4,.oga" name="uploadFile" size="1">
+                                                    <small style="color: white;" class="form-text text-muted" id="fileHelp">(Upload MP3,OGA or  MP4  format)</small>
+                                                </div>
+                                                <div id="record_audio" style="display:none;">
+                                                    <section class="experiment recordrtc" style="background:#201542;">
+                                                        <div class="col-sm-12">
+                                                            <select class="recording-media">
+                                                                <option selected value="record-audio">Audio</option>
+                                                            </select>
+                                                            <select class="media-container-format"></select>
+                                                            <div class="col-sm-4">&nbsp;</div>
+                                                            <div class="col-sm-2">
+                                                                <button type="button" class="audio-record btn btn-success"><i class="fa fa-play"></i></button>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-sm-12">&nbsp;</div>
+                                                        <div class="col-sm-12" style="display:none">
+                                                            <button id="save-to-disk" class="btn btn-primary btn-sm " style="width:30%;height: 30px;line-height: 37px;font-size: 14px;padding: 0 0px;display: none;">Save To Disk</button>
+                                                            <button id="open-new-tab" class="btn btn-primary btn-sm" style="width:30%;height: 30px;line-height: 37px;font-size: 14px;padding: 0 0px;display: none; ">Open New Tab</button>
+                                                            <button id="upload-to-server" class="btn btn-primary btn-sm" style="width:30%;height: 30px;line-height: 37px;font-size: 14px;padding: 0 0px;display: none;">Upload To Server</button>
+                                                        </div>
+                                                        <div class="col-sm-12">
+                                                            <video controls muted style="display:none;"></video>
+                                                        </div>
+                                                        <div class="col-sm-12">&nbsp;</div>
+                                                        <div class="col-sm-12">&nbsp;</div>
+                                                        <div class="col-sm-12">&nbsp;</div>
+                                                    </section>
+                                                    <input type="hidden" id="record_audio_url" name="record_audio_url">
+                                                </div>
+                                                <div class="col-sm-12">&nbsp;</div>
+                                                <!--                                <div class="form-group">
+                                                                        <label for="form-tag" class="active">VIDEO - YOU TUBE LINK*</label>
+                                                                        <input type="text" id="form-youtube" class="form-tag form-control" placeholder="" name="form-youtube" >
+                                                                    </div>-->
+                                                <div class="col-sm-12">&nbsp;</div>
+                                                <div class="btn-submit col-sm-8" id="submit">
+                                                    <button class="btn text-center" type="submit" name="submit" data-target='#gifModal' data-toggle='modal'>Submit</button>
+                                                </div>
+                                                <!--                                <div id="fade"></div>
+                                                                    <div id="modal" style="text-align:center" class="col-md-12 col-lg-12 col-sm-12 col-xs-12"><img id="add_post_modal" src="/upload/squares.gif" style="padding-top:15%;display: none !important" /></div>-->
+                                                <div id="upload_msg" style="display:none;"><i class="fa fa-exclamation-triangle"></i><h2 class="hidden-xs bg-danger"> Please Upload The Audio File</h2></div>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-3"></div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+               
+                <script type="text/javascript">
+  $(document).ready(function(){
+      $("#newsletter_subscribe").click(function(e){
+            e.preventDefault();
+            var nlname = $("#newsletter_txt").val();
+            var to= $("#nlemail").val();
+            $.ajax({
+                type: "POST",
+                url: 'https://www.musictalentindia.com/Pages/Pages/newsletter_mail',
+                data: { 'to':to,
+                        'msg':'test',
+                        'subject':'MTI Newsletter Subscription',
+                        'toname':nlname },
+                success:function(data)
+                {
+                    alert('SUCCESS!!');
+                },
+                error:function()
+                {
+                    alert('fail');
+                }
+            });
+      });
+  });
+                </script>
+              

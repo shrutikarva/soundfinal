@@ -1,0 +1,55 @@
+﻿
+@{
+    ViewBag.Title = "MyUploads";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div>
+    @{
+        Html.RenderPartial("_talentTopNav");
+    }
+</div>
+<div>
+    @{
+        Html.RenderPartial("_talentSidebar");
+    }
+</div>
+
+
+<div class="content-wrapper user">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2 col-lg-10 centered">
+                <div class="well">
+                    <div id="upload-singer" class="inner-bg profilepage">
+                        <div class="container">
+                            <div class="row">
+                                <div class="heading-block text-center">
+                                    <h3>Uploaded Audio/Video List</h3>
+                                    <span class="divide"></span>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-offset-3 col-sm-6">
+                                    <div class="form-box">
+                                        <div class="form-bottom">
+                                            <table style="color: #ffffff">
+                                                <tr>
+                                                    <th>Title</th>
+                                                    <th>Delete</th>
+                                                </tr>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-3"></div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
