@@ -13,5 +13,39 @@ namespace Sound.Controllers
         {
             return View();
         }
+        public ActionResult profile()
+        {
+            return View();
+
+        }
+        public ActionResult editprofile()
+        {
+            return View();
+
+        }
+        public ActionResult searchtalent() {
+            return View(); 
+        }
+        public ActionResult calendar()
+        {
+            return View();
+
+        }
+        public ActionResult groups() {
+            return View();
+        }
+
+        public ActionResult SearchFunctions() {
+            return View(); ;
+        }
+
+        public ActionResult account()
+        {
+            return View();
+        }
+        public ActionResult logout()
+        {
+            return View();    
+        }
     }
 }

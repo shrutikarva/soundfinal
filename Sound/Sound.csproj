@@ -209,13 +209,21 @@
     <Content Include="Views\Shared\_talentSidebar.cshtml" />
     <Content Include="Views\Talent\Reviews.cshtml" />
     <Content Include="Views\Talent\editprofile.cshtml" />
+    <Content Include="Views\Client\profile.cshtml" />
+    <Content Include="Views\Client\editprofile.cshtml" />
+    <Content Include="Views\Client\searchtalent.cshtml" />
+    <Content Include="Views\Client\calendar.cshtml" />
+    <Content Include="Views\Client\groups.cshtml" />
+    <Content Include="Views\Client\SearchFunctions.cshtml" />
+    <Content Include="Views\Client\logout.cshtml" />
+    <Content Include="Views\Shared\_clientTopNav.cshtml" />
+    <Content Include="Views\Shared\_clientSidebar.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Custom\JS\" />
     <Folder Include="Models\" />
     <Folder Include="Views\Admin\" />
-    <Folder Include="Views\Client\" />
     <Folder Include="Views\Visitor\" />
   </ItemGroup>
   <ItemGroup>
